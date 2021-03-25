@@ -4,13 +4,29 @@
   font-family: "Heebo", sans-serif;
 }
 
+body {
+  min-height: 100rem;
+}
+
 header {
   height: 5rem;
   background-color: #fff;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+header .container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.container {
+  padding: 0 5rem;
 }
 
 header nav ul li {
