@@ -9,6 +9,10 @@ body {
   min-height: 100rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 header {
   height: 5rem;
   background-color: #fff;
@@ -121,12 +125,14 @@ section.best-sellers {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 72px;
 }
 
 .best-sellers hr {
   width: 45px;
   border: none;
   border-top: 5px solid #fe4542;
+  padding-bottom: 50px;
 }
 
 .best-sellers h2 {
@@ -134,7 +140,72 @@ section.best-sellers {
   font-weight: normal;
 }
 
-.best-sellers .product-container {
+section.best-sellers .product-container {
   margin-top: 15px;
+}
+
+.product-container .product-card {
+  border-radius: 8px;
+  border: 1px olid #ddd;
+}
+
+.product-container {
+  width: 100%;
+}
+
+.product-container .row {
   display: flex;
+  justify-content: space-around;
+}
+
+.product-card {
+  text-align: center;
+  width: 33%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin: 0 8px;
+  padding: 20px;
+}
+
+.product-info .categories {
+  margin-top: 50px;
+}
+
+.product-info .categories,
+.product-info .title {
+  font-weight: normal;
+}
+
+.product-image img {
+  width: 150px;
+  height: 150px;
+  object-fit: fit;
+}
+
+.product-card button {
+  margin-top: 16px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #039634cc;
+  text-transform: uppercase;
+}
+
+.product-card {
+  position: relative;
+}
+
+.product-card.new::before {
+  content: "New";
+  position: absolute;
+  background-color: #ca3a37;
+  left: 0;
+  top: 0;
+  margin: 10px;
+  padding: 1px 10px;
+  border: none;
+  border-radius: 8px;
+  color: #ddd;
+  text-transform: uppercase;
+  font-size: 14px;
 }
