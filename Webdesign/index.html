@@ -23,6 +23,9 @@
             <li><a href="#">About us</a></li>
             <li><a href="#">Promotions</a></li>
             <li><a href="#">Newsletter</a></li>
+            <li class="hamburger-menu">
+              <img src="images/hamburger-menu.png" alt="hamburger-menu" />
+            </li>
           </ul>
         </nav>
       </div>
@@ -30,7 +33,10 @@
     <!-- header.nav -->
 
     <section class="hero">
-      <img src="images/Hero_image.jpg" alt="smart watch" />
+      <picture>
+        <source media="(max-width:576px)" srcset="images/Hero_Mobile.png" />
+        <img src="images/Hero_image.jpg" alt="smart watch" />
+      </picture>
       <div class="hero-content">
         <div class="container">
           <h1>Lorem ipsum dolor sit amet.</h1>
