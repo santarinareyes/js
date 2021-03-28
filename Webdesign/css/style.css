@@ -503,5 +503,9 @@ footer .bottom-nav .container ul li a:hover {
   footer .bottom-nav ul:last-of-type {
     margin-bottom: 0;
   }
+
+  .best-sellers h2 {
+    font-size: 36px;
+  }
 }
 /* End of design for mobiles */
