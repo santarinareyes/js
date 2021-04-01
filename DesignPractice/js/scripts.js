@@ -64,4 +64,15 @@ let ourServices = [
   },
 ];
 
+const servicesNext = document.querySelector("#service-next");
+const servicesPrev = document.querySelector("#service-previous");
+
+servicesNext.onclick = function () {
+  console.log("next clicked");
+};
+
+servicesPrev.onclick = function () {
+  console.log("prev clicked");
+};
+
 // Footer
