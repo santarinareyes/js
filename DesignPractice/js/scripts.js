@@ -60,6 +60,11 @@ let ourServices = [
     text:
       "Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus.",
   },
+  {
+    title: "Wait What",
+    text:
+      "Yaas Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus.",
+  },
 ];
 
 const servicesNext = document.querySelector("#service-next"),
@@ -90,3 +95,6 @@ servicesPrev.onclick = function () {
 };
 
 // Footer
+let getCurrentDate = new Date();
+let currentYear = getCurrentDate.getFullYear();
+document.querySelector("#current_year").innerHTML = currentYear.toString();
