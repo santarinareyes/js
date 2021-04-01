@@ -72,26 +72,21 @@ let currentService = 0;
 servicesNext.onclick = function () {
   if (currentService < ourServices.length - 1) {
     currentService++;
-    serviceTitle.innerHTML = ourServices[currentService].title;
-    serviceText.innerHTML = ourServices[currentService].text;
   } else {
     currentService = 0;
-    serviceTitle.innerHTML = ourServices[currentService].title;
-    serviceText.innerHTML = ourServices[currentService].text;
   }
-  console.log(currentService);
+  serviceTitle.innerHTML = ourServices[currentService].title;
+  serviceText.innerHTML = ourServices[currentService].text;
 };
 
 servicesPrev.onclick = function () {
   if (currentService > 0) {
     currentService--;
-    serviceTitle.innerHTML = ourServices[currentService].title;
-    serviceText.innerHTML = ourServices[currentService].text;
   } else {
     currentService = ourServices.length - 1;
-    serviceTitle.innerHTML = ourServices[currentService].title;
-    serviceText.innerHTML = ourServices[currentService].text;
   }
+  serviceTitle.innerHTML = ourServices[currentService].title;
+  serviceText.innerHTML = ourServices[currentService].text;
 };
 
 // Footer
