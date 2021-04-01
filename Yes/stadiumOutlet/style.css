@@ -1,0 +1,47 @@
+.column.infinite-product-item.end.load-more-item.load-more-item-countable.xsmall-6.medium-3 {
+  width: 100%;
+}
+
+.infinite-product-item .product-card__images {
+  min-height: 31rem;
+}
+
+.category-page__content {
+  text-align: center;
+}
+
+.highlight-sticker--rebate {
+  top: 0;
+  left: 0;
+}
+
+.product-card__price {
+  display: flex;
+  flex-direction: row-reverse;
+  float: left;
+}
+
+.product-card {
+  text-align: left;
+}
+
+/* Start of 'showing 3 product cards each row '*/
+.column.infinite-product-item.end.load-more-item.load-more-item-countable.xsmall-6.medium-3 {
+  width: 33%;
+  min-width: 440px;
+}
+
+.chart--initialized .chart__text,
+.component-rich-relevance-wrapper.initialized,
+.component-rich-relevance-wrapper[data-js-module-initialized="true"],
+[data-js-module-lazy-load].initialized,
+[data-js-module-lazy-load][data-js-module-initialized="true"] {
+  display: flex;
+  justify-content: center;
+}
+/* End of 'showing 3 products cards each row'*/
+
+/* Put the "Ny" tag a bit to the right*/
+.product-card__images .highlight-sticker {
+  left: 20%;
+}

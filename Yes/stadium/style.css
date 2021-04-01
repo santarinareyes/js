@@ -1,0 +1,23 @@
+.pdp__form {
+  display: inline-flex;
+}
+
+.pdp__selections {
+  width: 8rem;
+}
+
+button.button--cta,
+.button--cta:focus {
+  border-color: #40a251;
+  background-color: #40a251;
+  border: none;
+  border-radius: 0;
+  float: right;
+  bottom: 1.5px;
+}
+
+button.button--cta:hover,
+.button--cta:hover {
+  border-color: #459253;
+  background-color: #459253;
+}
