@@ -1,29 +1,29 @@
 let products = {
   white: {
     plain: {
-      unit_price: 5.12,
+      unitPrice: 5.12,
       photo: "v-white.jpg",
     },
     printed: {
-      unit_price: 8.95,
+      unitPrice: 8.95,
       photo: "v-white-personalized.jpg",
     },
   },
 
   colored: {
     plain: {
-      unit_price: 6.04,
+      unitPrice: 6.04,
       photo: "v-color.jpg",
     },
     printed: {
-      unit_price: 9.47,
+      unitPrice: 9.47,
       photo: "v-color-personalized.png",
     },
   },
 };
 
 // Search params
-let search_params = {
+let searchParams = {
   quantity: "",
   color: "",
   quality: "",
@@ -41,20 +41,44 @@ let search_params = {
 
 $(function () {
   function updateParams() {
-    search_params.quantity = $("#quantity").val();
-    search_params.color = $("#color .option-button.selected").attr("id");
-    search_params.quality = $("#quality .option-button.selected").attr("id");
-    search_params.style = $("#style option:checked").val();
+    searchParams.quantity = $("#quantity").val();
+    searchParams.color = $("#color .option-button.selected").attr("id");
+    searchParams.quality = $("#quality .option-button.selected").attr("id");
+    searchParams.style = $("#style option:checked").val();
     updateOrderDetails();
   }
 
   function updateOrderDetails() {
-    $("#result-quantity").html(search_params.quantity);
-    $("#result-color").html($("#" + search_params.color).text());
-    $("#result-quality").html($("#" + search_params.quality).text());
+    $("#result-quantity").html(parseInt(searchParams.quantity));
+    $("#result-color").html($("#" + searchParams.color).text());
+    $("#result-quality").html($("#" + searchParams.quality).text());
     $("#result-style").html(
-      $("#style option[value='" + search_params.style + "']").text()
+      $("#style option[value='" + searchParams.style + "']").text()
     );
+    $("#total-price").text(calculateTotal().toFixed(2));
+    $("#photo-product").attr(
+      "src",
+      "img/" + products[searchParams.color][searchParams.style].photo
+    );
+  }
+
+  function calculateTotal() {
+    let unitPrice = products[searchParams.color][searchParams.style].unitPrice;
+
+    if (searchParams.quality == "q190") {
+      unitPrice *= 1.12;
+    }
+
+    let total = unitPrice * searchParams.quantity;
+
+    if (searchParams.quantity >= 1000) {
+      total *= 0.8;
+    } else if (searchParams.quantity >= 500) {
+      total *= 0.88;
+    } else if (searchParams.quantity >= 100) {
+      total *= 0.95;
+    }
+    return total;
   }
 
   updateParams();
