@@ -1,4 +1,4 @@
-var products = {
+let products = {
   white: {
     plain: {
       unit_price: 5.12,
@@ -23,7 +23,7 @@ var products = {
 };
 
 // Search params
-var search_params = {
+let search_params = {
   quantity: "",
   color: "",
   quality: "",
@@ -39,5 +39,12 @@ var search_params = {
 // 2: above 500 units - 12% discount
 // 3: above 100 units - 5% discount
 
-// Solution:
-$(function () {});
+$(function () {
+  function updateParams() {
+    search_params.quantity = $("#quantity").val();
+    search_params.color = $("#color .option-button.selected").attr("id");
+    search_params.quality = $("#quality .option-button.selected").attr("id");
+    search_params.style = $("#style option:checked").val();
+  }
+  updateParams();
+});
