@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.example,
+#hide {
+  margin: 0 1px;
+  color: white;
+  font-size: 18px;
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+.example {
+  background-color: #1096d5;
+}
+
+#hide {
+  background-color: #27ae61;
+  cursor: pointer;
+  transition: 1s;
+}
+
+#hide:hover {
+  background-color: #034732;
+  transition: 1s;
+}
