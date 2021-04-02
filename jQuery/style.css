@@ -3,6 +3,10 @@
   justify-content: center;
 }
 
+hr {
+  width: 75%;
+}
+
 /* Hide/Show */
 .example,
 #hide,
@@ -48,11 +52,21 @@
 }
 
 #change_image,
-#btn_write_something {
+#btn_write_something,
+#options {
   min-width: 180px;
   max-width: 180px;
   align-self: center;
   border: none;
+}
+
+#options {
+  border: 1px solid #e3e3e3;
+}
+
+#selected_option {
+  min-width: 160px;
+  max-width: 160px;
 }
 
 /* Write something */
@@ -69,4 +83,20 @@ code {
   width: 20.2rem;
   vertical-align: middle;
   transition: 0.5s;
+}
+
+#options {
+  margin: 0 1px;
+  font-size: 18px;
+  padding: 10px 15px;
+}
+
+form#option_form {
+  display: flex;
+  justify-content: center;
+}
+
+.third.container {
+  display: flex;
+  flex-direction: column;
 }

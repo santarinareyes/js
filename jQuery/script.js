@@ -80,3 +80,9 @@ $("#btn_write_something").click(function () {
     $("#btn_write_something").text("Click to start writing something");
   }
 });
+
+// Options
+$("#options").change(function () {
+  let selectedText = $("#options option:selected").text();
+  $("#selected_option_text").text(selectedText);
+});
