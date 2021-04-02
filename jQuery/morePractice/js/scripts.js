@@ -55,7 +55,7 @@ $(function () {
     $("#result-style").html(
       $("#style option[value='" + searchParams.style + "']").text()
     );
-    $("#total-price").text(calculateTotal().toFixed(2));
+    $("#total-price").text(calculateTotal());
     $("#photo-product").attr(
       "src",
       "img/" + products[searchParams.color][searchParams.style].photo
@@ -78,7 +78,12 @@ $(function () {
     } else if (searchParams.quantity >= 100) {
       total *= 0.95;
     }
-    return total;
+
+    // https://www.w3schools.com/jsref/jsref_tolocalestring_number.asp
+    return total.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
   }
 
   updateParams();
