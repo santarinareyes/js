@@ -29,7 +29,54 @@ $("#change_image").click(function () {
       "src",
       "https://static.memrise.com/img/400sqf/from/uploads/course_photos/3146044000171223183557.png"
     );
-    $("#change_image").text("Change to PHP");
+    $("#change_image").text("Change to ");
     showPHP = false;
+  }
+});
+
+// Write something
+$("#write_something_code").hide();
+$("#write_something").hide();
+let writeSomething = false;
+
+$("#btn_write_something").click(function () {
+  if (!writeSomething) {
+    writeSomething = true;
+    $("#btn_write_something").text("Click to stop writing something");
+    $("#write_something").show();
+
+    let activateWrite = window.setInterval(function () {
+      if (writeSomething) {
+        console.log("test");
+        if ($("#write_something").val().length < 1) {
+          $("#write_something_code").hide();
+
+          let closeWriteTimer = window.setInterval(function () {
+            if ($("#write_something").val().length < 1) {
+              console.log("test2");
+              writeSomething = false;
+              $("#btn_write_something").text(
+                "Click to start writing something"
+              );
+              $("#write_something").hide();
+              window.clearInterval(activateWrite);
+              window.clearInterval(closeWriteTimer);
+            } else {
+              window.clearInterval(closeWriteTimer);
+            }
+          }, 15000);
+        } else {
+          $("#write_something_code").show();
+          $("#write_something_text").text($("#write_something").val());
+        }
+      } else {
+        window.clearInterval(activateWrite);
+      }
+    }, 100);
+  } else {
+    writeSomething = false;
+    $("#write_something_code").hide();
+    $("#write_something").hide();
+    $("#btn_write_something").text("Click to start writing something");
   }
 });

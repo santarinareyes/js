@@ -6,7 +6,8 @@
 /* Hide/Show */
 .example,
 #hide,
-#change_image {
+#change_image,
+#btn_write_something {
   margin: 0 1px;
   color: white;
   font-size: 18px;
@@ -19,14 +20,16 @@
 }
 
 #hide,
-#change_image {
+#change_image,
+#btn_write_something {
   background-color: #27ae61;
   cursor: pointer;
   transition: 1s;
 }
 
 #hide:hover,
-#change_image:hover {
+#change_image:hover,
+#btn_write_something:hover {
   background-color: #034732;
   transition: 1s;
 }
@@ -44,9 +47,26 @@
   max-height: 180px;
 }
 
-#change_image {
+#change_image,
+#btn_write_something {
   min-width: 180px;
   max-width: 180px;
   align-self: center;
   border: none;
+}
+
+/* Write something */
+#write_something,
+code {
+  align-self: center;
+  width: 20rem;
+  height: 37px;
+  padding: 0 10px;
+}
+
+code {
+  background-color: #e3e3e3;
+  width: 20.2rem;
+  vertical-align: middle;
+  transition: 0.5s;
 }
