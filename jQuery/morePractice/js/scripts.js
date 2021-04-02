@@ -45,6 +45,17 @@ $(function () {
     search_params.color = $("#color .option-button.selected").attr("id");
     search_params.quality = $("#quality .option-button.selected").attr("id");
     search_params.style = $("#style option:checked").val();
+    updateOrderDetails();
   }
+
+  function updateOrderDetails() {
+    $("#result-quantity").html(search_params.quantity);
+    $("#result-color").html($("#" + search_params.color).text());
+    $("#result-quality").html($("#" + search_params.quality).text());
+    $("#result-style").html(
+      $("#style option[value='" + search_params.style + "']").text()
+    );
+  }
+
   updateParams();
 });
