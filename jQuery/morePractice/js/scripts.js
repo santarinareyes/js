@@ -99,5 +99,10 @@ $(function () {
 
     $(childSelector).removeClass("selected");
     $(this).addClass("selected");
+
+    let selectedChild = "#" + clickedOption + " .option-button.selected";
+    searchParams[clickedOption] = $(selectedChild).attr("id");
+    searchParams[clickedOption] = $(selectedChild).attr("id");
+    updateOrderDetails();
   });
 });
