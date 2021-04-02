@@ -91,3 +91,14 @@ $("#options").change(function () {
 $("input[name='location']").change(function () {
   $("#selected_radio p").text($("input[name='location']:checked").val());
 });
+
+// Checkbox
+$("input[name='interest']").change(function () {
+  let selectedCheckboxes = $("input[name='interest']:checked");
+  $.each(selectedCheckboxes, function (index, value) {
+    console.log($(value).parent().text());
+    $("#selected_checkbox ul").html(
+      "<li>" + $(value).parent().text() + "</li>"
+    );
+  });
+});

@@ -101,7 +101,12 @@ form#option_form {
   flex-direction: column;
 }
 
-form.radio_form {
+form.radio_form,
+form.checkbox_form {
   display: flex;
   justify-content: center;
+}
+
+#selected_checkbox {
+  height: 100%;
 }
