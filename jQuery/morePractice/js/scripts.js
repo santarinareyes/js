@@ -82,4 +82,22 @@ $(function () {
   }
 
   updateParams();
+
+  $("#quantity").change(function () {
+    searchParams.quantity = $("#quantity").val();
+    updateOrderDetails();
+  });
+
+  $("#style").change(function () {
+    searchParams.style = $("#style option:checked").val();
+    updateOrderDetails();
+  });
+
+  $(".option-button").click(function () {
+    let clickedOption = $(this).parent().attr("id");
+    let childSelector = "#" + clickedOption + " .option-button";
+
+    $(childSelector).removeClass("selected");
+    $(this).addClass("selected");
+  });
 });
