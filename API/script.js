@@ -55,30 +55,51 @@
 // });
 // };
 
+// const btn = document.querySelector("button"),
+//   input = document.querySelector("input"),
+//   response = document.querySelector("#api-response"),
+//   url = "https://randomuser.me/api/";
+
+// btn.onclick = function () {
+//   const xhr = new XMLHttpRequest(),
+//     amountToGet = "?results=" + input.value;
+//   xhr.onload = function () {
+//     if (this.readyState === 4) {
+//       if (this.status === 200) {
+//         let data = JSON.parse(xhr.responseText).results;
+//         getValues(data);
+//       }
+//     }
+//   };
+//   xhr.open("GET", url + amountToGet);
+//   xhr.send();
+// };
+
+// function getValues(data) {
+//   response.innerHTML = "<ul>";
+//   for (i = 0; i < data.length; i++) {
+//     response.innerHTML += "<li>" + data[i].email + "</li>";
+//   }
+//   response.innerHTML += "</ul>";
+// }
+
 const btn = document.querySelector("button"),
   input = document.querySelector("input"),
   response = document.querySelector("#api-response"),
   url = "https://randomuser.me/api/";
 
 btn.onclick = function () {
-  const xhr = new XMLHttpRequest(),
-    amountToGet = "?results=" + input.value;
-  xhr.onload = function () {
-    if (this.readyState === 4) {
-      if (this.status === 200) {
-        let data = JSON.parse(xhr.responseText).results;
-        getValues(data);
+  fetch(url)
+    .then(function (response) {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        console.log("Error");
       }
-    }
-  };
-  xhr.open("GET", url + amountToGet);
-  xhr.send();
+    })
+    .then(function (responseJson) {
+      console.log(responseJson);
+      console.log("***");
+      console.log(JSON.stringify(responseJson));
+    });
 };
-
-function getValues(data) {
-  response.innerHTML = "<ul>";
-  for (i = 0; i < data.length; i++) {
-    response.innerHTML += "<li>" + data[i].email + "</li>";
-  }
-  response.innerHTML += "</ul>";
-}
