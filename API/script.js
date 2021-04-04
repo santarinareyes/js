@@ -113,14 +113,15 @@ btn.onclick = function () {
   let amountToGet = "?results=" + input.value;
   fetch(url + amountToGet)
     .then(function (response) {
-      if (response.status === 200) {
-        return response.json();
-      } else {
-        console.log("Error");
-      }
+      return response.json();
+      // if (response.status === 200) {
+      //   return response.json();
+      // } else {
+      //   console.log("Error");
+      // }
     })
     .then(function (responseJson) {
-      console.log(responseJson.length); // undefined
+      // console.log(responseJson.length); // undefined
       console.log(responseJson.results.length);
       response.innerHTML = "<ul>";
       for (let i = 0; i < responseJson.results.length; i++) {
@@ -128,5 +129,8 @@ btn.onclick = function () {
           "<li>" + responseJson.results[i].name.first + "</li>";
       }
       response.innerHTML += "</ul>";
+    })
+    .catch(function (err) {
+      console.log(err);
     });
 };
