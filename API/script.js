@@ -135,6 +135,32 @@
 //     });
 // };
 
+// const btn = document.querySelector("button"),
+//   input = document.querySelector("input"),
+//   response = document.querySelector("#api-response"),
+//   url = "http://localhost/JavaScript Practice/API/v1/products/";
+
+// btn.onclick = function () {
+//   let amountToGet = input.value;
+//   let params = new Request(url + amountToGet, {
+//     method: "GET",
+//     headers: new Headers().append("Content-Type", "application/json"),
+//   });
+//   fetch(params)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (responseJson) {
+//       for (let i = 0; i < responseJson.data.products.length; i++) {
+//         response.innerHTML +=
+//           JSON.stringify(responseJson.data.products[i]) + "<br/><br/>";
+//       }
+//     })
+//     .catch(function (err) {
+//       console.log(err);
+//     });
+// };
+
 const btn = document.querySelector("button"),
   input = document.querySelector("input"),
   response = document.querySelector("#api-response"),
@@ -144,19 +170,11 @@ btn.onclick = function () {
   let amountToGet = input.value;
   let params = new Request(url + amountToGet, {
     method: "GET",
-    headers: new Headers().append("Content-Type", "application/json"),
   });
   fetch(params)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (responseJson) {
-      for (let i = 0; i < responseJson.data.products.length; i++) {
-        response.innerHTML +=
-          JSON.stringify(responseJson.data.products[i]) + "<br/><br/>";
-      }
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
+    .then((res) => res.json())
+    .then(
+      (results) => (response.innerHTML = JSON.stringify(results.data.products))
+    )
+    .catch((error) => (response.innerHTML = error));
 };
