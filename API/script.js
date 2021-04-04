@@ -83,13 +83,35 @@
 //   response.innerHTML += "</ul>";
 // }
 
+// const btn = document.querySelector("button"),
+//   input = document.querySelector("input"),
+//   response = document.querySelector("#api-response"),
+//   url = "https://randomuser.me/api/";
+
+// btn.onclick = function () {
+//   fetch(url)
+//     .then(function (response) {
+//       if (response.status === 200) {
+//         return response.json();
+//       } else {
+//         console.log("Error");
+//       }
+//     })
+//     .then(function (responseJson) {
+//       console.log(responseJson);
+//       console.log("***");
+//       console.log(JSON.stringify(responseJson));
+//     });
+// };
+
 const btn = document.querySelector("button"),
   input = document.querySelector("input"),
   response = document.querySelector("#api-response"),
   url = "https://randomuser.me/api/";
 
 btn.onclick = function () {
-  fetch(url)
+  let amountToGet = "?results=" + input.value;
+  fetch(url + amountToGet)
     .then(function (response) {
       if (response.status === 200) {
         return response.json();
@@ -98,8 +120,13 @@ btn.onclick = function () {
       }
     })
     .then(function (responseJson) {
-      console.log(responseJson);
-      console.log("***");
-      console.log(JSON.stringify(responseJson));
+      console.log(responseJson.length); // undefined
+      console.log(responseJson.results.length);
+      response.innerHTML = "<ul>";
+      for (let i = 0; i < responseJson.results.length; i++) {
+        response.innerHTML +=
+          "<li>" + responseJson.results[i].name.first + "</li>";
+      }
+      response.innerHTML += "</ul>";
     });
 };
