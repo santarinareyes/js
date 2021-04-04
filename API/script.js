@@ -151,14 +151,10 @@ btn.onclick = function () {
       return response.json();
     })
     .then(function (responseJson) {
-      response.innerHTML = JSON.stringify(responseJson.data.products);
-      // console.log(responseJson.data);
-      // response.innerHTML = "<ul>";
-      // for (let i = 0; i < responseJson.data.products.length; i++) {
-      //   response.innerHTML +=
-      //     "<li>" + JSON.stringify(responseJson.data.products[i]) + "</li>";
-      // }
-      // response.innerHTML += "</ul>";
+      for (let i = 0; i < responseJson.data.products.length; i++) {
+        response.innerHTML +=
+          JSON.stringify(responseJson.data.products[i]) + "<br/><br/>";
+      }
     })
     .catch(function (err) {
       console.log(err);
