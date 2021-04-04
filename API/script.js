@@ -144,19 +144,21 @@ btn.onclick = function () {
   let amountToGet = input.value;
   let params = new Request(url + amountToGet, {
     method: "GET",
+    headers: new Headers().append("Content-Type", "application/json"),
   });
   fetch(params)
     .then(function (response) {
       return response.json();
     })
     .then(function (responseJson) {
-      console.log(responseJson.data);
-      response.innerHTML = "<ul>";
-      for (let i = 0; i < responseJson.data.products.length; i++) {
-        response.innerHTML +=
-          "<li>" + responseJson.data.products[i].title + "</li>";
-      }
-      response.innerHTML += "</ul>";
+      response.innerHTML = JSON.stringify(responseJson.data.products);
+      // console.log(responseJson.data);
+      // response.innerHTML = "<ul>";
+      // for (let i = 0; i < responseJson.data.products.length; i++) {
+      //   response.innerHTML +=
+      //     "<li>" + JSON.stringify(responseJson.data.products[i]) + "</li>";
+      // }
+      // response.innerHTML += "</ul>";
     })
     .catch(function (err) {
       console.log(err);
