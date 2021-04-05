@@ -59,11 +59,11 @@ export default () => {
   console.log(likes);
 
   return (
-    <div className="Post">
-      <img src={formatImageUrl(url)}></img>
-      <h4>{description}</h4>
-      <div>
-        <span>Likes: {likes}</span>
+    <div className="post">
+      <img className="post__image" src={formatImageUrl(url)}></img>
+      <div className="post__text--content">
+        <span className="post__likes">Likes: {likes}</span>
+        <h4 className="post__description">{description}</h4>
       </div>
     </div>
   );
