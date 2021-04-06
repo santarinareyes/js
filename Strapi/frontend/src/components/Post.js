@@ -49,15 +49,7 @@ const API_URL = "http://localhost:1337";
 
 const formatImageUrl = (url) => `${API_URL}${url}`;
 
-export default () => {
-  const url = post.image && post.image.url;
-  const description = post.description;
-  const likes = post.likes;
-
-  console.log(url);
-  console.log(description);
-  console.log(likes);
-
+export default ({ description, likes, url }) => {
   return (
     <div className="post">
       <img className="post__image" src={formatImageUrl(url)}></img>
