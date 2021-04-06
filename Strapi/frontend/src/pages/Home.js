@@ -1,10 +1,7 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/no-anonymous-default-export */
 import { useState, useEffect } from "react";
 import Post from "../components/Post";
 
-export default () => {
+const Home = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -29,3 +26,5 @@ export default () => {
     </div>
   );
 };
+
+export default Home;
