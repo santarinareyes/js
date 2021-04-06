@@ -17,6 +17,8 @@
 .post__image {
   min-height: 20rem;
   max-height: 20rem;
+  max-width: 20rem;
+  border: 1px solid #e3e3e3;
 }
 
 .post__description {
