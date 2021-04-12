@@ -23,19 +23,19 @@ import React, { useState } from "react";
 const Testing = () => {
   let [count, setCount] = useState(0);
 
-  const plus = () => {
-    setCount(count++);
-  };
+  //   const plus = () => {
+  //     setCount(count++);
+  //   };
 
-  const minus = () => {
-    setCount(count--);
-  };
+  //   const minus = () => {
+  //     setCount(count--);
+  //   };
 
   return (
     <div className="Testing">
       <p>{count}</p>
-      <button onClick={plus}>Plus</button>
-      <button onClick={minus}>Minus</button>
+      <button onClick={() => setCount(count++)}>Plus</button>
+      <button onClick={() => setCount(count--)}>Minus</button>
     </div>
   );
 };
